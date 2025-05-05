@@ -2208,6 +2208,11 @@
   resolved "https://registry.yarnpkg.com/@sanity/generate-help-url/-/generate-help-url-3.0.0.tgz#60e9cba61b82103ea3761730a53cd9310b98892d"
   integrity sha512-wtMYcV5GIDIhVyF/jjmdwq1GdlK07dRL40XMns73VbrFI7FteRltxv48bhYVZPcLkRXb0SHjpDS/icj9/yzbVA==
 
+"@sanity/icons@^2.10.0":
+  version "2.11.8"
+  resolved "https://registry.yarnpkg.com/@sanity/icons/-/icons-2.11.8.tgz#90a38b7d23b5c9f728a6e7ebdac80c3f76c64c35"
+  integrity sha512-C4ViXtk6eyiNTQ5OmxpfmcK6Jw+LLTi9zg9XBUD15DzC4xTHaGW9SVfUa43YtPGs3WC3M0t0K59r0GDjh52HIg==
+
 "@sanity/icons@^3.7.0":
   version "3.7.0"
   resolved "https://registry.yarnpkg.com/@sanity/icons/-/icons-3.7.0.tgz#447f80db60e5cae4d90537b1d5ab2197c090d7f1"
@@ -2253,6 +2258,11 @@
     split2 "^4.2.0"
     tar-fs "^2.1.2"
     tinyglobby "^0.2.9"
+
+"@sanity/incompatible-plugin@^1.0.4":
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/@sanity/incompatible-plugin/-/incompatible-plugin-1.0.5.tgz#cdf50c88a0938906a15ac2eb6cc21cafea898b76"
+  integrity sha512-9JGAacbElUPy9Chghd+sllIiM3jAcraZdD65bWYWUVKkghOsf1L/+jFLz1rcAuvrA9o2s7Y+T75BNcXuLwRcvw==
 
 "@sanity/insert-menu@^1.1.9":
   version "1.1.11"
@@ -2410,7 +2420,7 @@
   dependencies:
     "@sanity/client" "^7.0.0"
 
-"@sanity/ui@^2.15.14":
+"@sanity/ui@^2.0.1", "@sanity/ui@^2.15.14":
   version "2.15.14"
   resolved "https://registry.yarnpkg.com/@sanity/ui/-/ui-2.15.14.tgz#fa05407cc7a84b0beafc88aeda634b1ac0cf9800"
   integrity sha512-n1Hn97A1W/ku6+hDhojlA601w03XjBBbeEH+e5n6nXBnLj81GjE5DsoJcZ+ZDQI47iGmGsvG1M8eAb6E2VPuuQ==
@@ -7373,6 +7383,15 @@ safe-regex-test@^1.0.3, safe-regex-test@^1.1.0:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/safer-buffer/-/safer-buffer-2.1.2.tgz#44fa161b0187b9549dd84bb91802f9bd8385cd6a"
   integrity sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==
+
+sanity-plugin-vimeo-field@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/sanity-plugin-vimeo-field/-/sanity-plugin-vimeo-field-1.0.1.tgz#b46ffc3d17c060143824b0e5cae7999c037f80ac"
+  integrity sha512-h9ABYEtVCQgbBz9MAbshN7MbsctvnUJ9CKZoSJS9F1Jw3iG0DSDBiMP2rSCNakBYLwJ9gwgKDBYfWjJ2+Lx2PQ==
+  dependencies:
+    "@sanity/icons" "^2.10.0"
+    "@sanity/incompatible-plugin" "^1.0.4"
+    "@sanity/ui" "^2.0.1"
 
 sanity@^3.87.1:
   version "3.87.1"
