@@ -36,16 +36,6 @@ export const categoryPageType = defineType({
       type: 'image',
       validation: (rule) => rule.required(),
     }),
-
-    defineField({
-      title: 'Vimeo',
-      name: 'vimeo',
-      type: 'vimeo',
-      options: {
-        fields: ['metadata'],
-      },
-    }),
-
     defineField({
       name: 'videoGallery',
       type: 'array',
