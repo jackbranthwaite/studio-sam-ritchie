@@ -1,15 +1,17 @@
 import {categoryPageType} from './categoryPageType'
 import {homepage} from './homeType'
-import {doubleImage} from './objects/doubleImage'
-import {fullWidthImage} from './objects/fullWidthImage'
-import {video} from './objects/video'
+import dualImage from './objects/dualImage'
 import {postType} from './postType'
+import fullWidthImage from './objects/fullWidthImage'
+import flexibleImageContainer from './objects/flexibleImageContainer'
+import vimeoEmbed from './objects/vimeoEmbed'
 
 export const schemaTypes = [
   postType,
   homepage,
   categoryPageType,
-  doubleImage,
+  dualImage,
   fullWidthImage,
-  video,
+  flexibleImageContainer,
+  vimeoEmbed,
 ]

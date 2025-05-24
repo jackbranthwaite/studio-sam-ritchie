@@ -9,17 +9,19 @@
     "start": "sanity start",
     "build": "sanity build",
     "deploy": "sanity deploy",
-    "deploy-graphql": "sanity graphql deploy"
+    "deploy-graphql": "sanity graphql deploy",
+    "types": "sanity typegen generate",
+    "schema": "npx sanity@latest schema extract"
   },
   "keywords": [
     "sanity"
   ],
   "dependencies": {
+    "@sanity/types": "^3.89.0",
     "@sanity/vision": "^3.87.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sanity": "^3.87.1",
-    "sanity-plugin-vimeo-field": "^1.0.1",
     "styled-components": "^6.1.15"
   },
   "devDependencies": {

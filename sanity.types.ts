@@ -68,13 +68,25 @@ export type Geopoint = {
   alt?: number
 }
 
-export type Video = {
-  _type: 'video'
-  vimeo?: Vimeo
+export type VimeoEmbed = {
+  _type: 'vimeoEmbed'
+  url?: string
 }
 
-export type FullWidthImage = {
-  _type: 'fullWidthImage'
+export type FlexibleImageContainer = {
+  _type: 'flexibleImageContainer'
+  imageBlocks?: Array<
+    | ({
+        _key: string
+      } & DualImageBlock)
+    | ({
+        _key: string
+      } & SingleImageBlock)
+  >
+}
+
+export type SingleImageBlock = {
+  _type: 'singleImageBlock'
   image?: {
     asset?: {
       _ref: string
@@ -87,11 +99,13 @@ export type FullWidthImage = {
     crop?: SanityImageCrop
     _type: 'image'
   }
+  caption?: string
+  fullWidth?: boolean
 }
 
-export type DoubleImage = {
-  _type: 'doubleImage'
-  imageLeft?: {
+export type DualImageBlock = {
+  _type: 'dualImageBlock'
+  leftImage?: {
     asset?: {
       _ref: string
       _type: 'reference'
@@ -103,7 +117,7 @@ export type DoubleImage = {
     crop?: SanityImageCrop
     _type: 'image'
   }
-  imageRight?: {
+  rightImage?: {
     asset?: {
       _ref: string
       _type: 'reference'
@@ -115,6 +129,7 @@ export type DoubleImage = {
     crop?: SanityImageCrop
     _type: 'image'
   }
+  caption?: string
 }
 
 export type CategoryPage = {
@@ -150,13 +165,28 @@ export type CategoryPage = {
     _type: 'image'
     _key: string
   }>
-  stillsContent?: Array<
+  content?: Array<
+    | {
+        children?: Array<{
+          marks?: Array<string>
+          text?: string
+          _type: 'span'
+          _key: string
+        }>
+        style?: 'normal' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'blockquote'
+        listItem?: 'bullet' | 'number'
+        markDefs?: Array<{
+          href?: string
+          _type: 'link'
+          _key: string
+        }>
+        level?: number
+        _type: 'block'
+        _key: string
+      }
     | ({
         _key: string
-      } & DoubleImage)
-    | ({
-        _key: string
-      } & FullWidthImage)
+      } & FlexibleImageContainer)
   >
   videosTitleImage?: {
     asset?: {
@@ -173,7 +203,7 @@ export type CategoryPage = {
   videoGallery?: Array<
     {
       _key: string
-    } & Video
+    } & VimeoEmbed
   >
 }
 
@@ -303,22 +333,16 @@ export type Slug = {
   source?: string
 }
 
-export type Vimeo = {
-  _type: 'vimeo'
-  vimeoData?: {
-    id?: string
-  }
-}
-
 export type AllSanitySchemaTypes =
   | SanityImagePaletteSwatch
   | SanityImagePalette
   | SanityImageDimensions
   | SanityFileAsset
   | Geopoint
-  | Video
-  | FullWidthImage
-  | DoubleImage
+  | VimeoEmbed
+  | FlexibleImageContainer
+  | SingleImageBlock
+  | DualImageBlock
   | CategoryPage
   | Homepage
   | Post
@@ -328,5 +352,4 @@ export type AllSanitySchemaTypes =
   | SanityAssetSourceData
   | SanityImageMetadata
   | Slug
-  | Vimeo
 export declare const internalGroqTypeReferenceTo: unique symbol

@@ -2101,6 +2101,16 @@
     get-it "^8.6.7"
     rxjs "^7.0.0"
 
+"@sanity/client@^7.2.2":
+  version "7.3.0"
+  resolved "https://registry.yarnpkg.com/@sanity/client/-/client-7.3.0.tgz#7c19bc54a5af4ec578953833acfdb973691ec2cf"
+  integrity sha512-VmzlvGwvWRNxEqAYHNDdvB6u0460C38fPJSHUaIcdBCTBWKMeCgIE8QI1w4PxO0PiYuWgERexRS2OrF+OYh3tQ==
+  dependencies:
+    "@sanity/eventsource" "^5.0.2"
+    get-it "^8.6.9"
+    nanoid "^3.3.11"
+    rxjs "^7.0.0"
+
 "@sanity/codegen@3.87.1":
   version "3.87.1"
   resolved "https://registry.yarnpkg.com/@sanity/codegen/-/codegen-3.87.1.tgz#3a463acdfc31bd36334a0e5215c8bf9f216816bd"
@@ -2208,11 +2218,6 @@
   resolved "https://registry.yarnpkg.com/@sanity/generate-help-url/-/generate-help-url-3.0.0.tgz#60e9cba61b82103ea3761730a53cd9310b98892d"
   integrity sha512-wtMYcV5GIDIhVyF/jjmdwq1GdlK07dRL40XMns73VbrFI7FteRltxv48bhYVZPcLkRXb0SHjpDS/icj9/yzbVA==
 
-"@sanity/icons@^2.10.0":
-  version "2.11.8"
-  resolved "https://registry.yarnpkg.com/@sanity/icons/-/icons-2.11.8.tgz#90a38b7d23b5c9f728a6e7ebdac80c3f76c64c35"
-  integrity sha512-C4ViXtk6eyiNTQ5OmxpfmcK6Jw+LLTi9zg9XBUD15DzC4xTHaGW9SVfUa43YtPGs3WC3M0t0K59r0GDjh52HIg==
-
 "@sanity/icons@^3.7.0":
   version "3.7.0"
   resolved "https://registry.yarnpkg.com/@sanity/icons/-/icons-3.7.0.tgz#447f80db60e5cae4d90537b1d5ab2197c090d7f1"
@@ -2258,11 +2263,6 @@
     split2 "^4.2.0"
     tar-fs "^2.1.2"
     tinyglobby "^0.2.9"
-
-"@sanity/incompatible-plugin@^1.0.4":
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/@sanity/incompatible-plugin/-/incompatible-plugin-1.0.5.tgz#cdf50c88a0938906a15ac2eb6cc21cafea898b76"
-  integrity sha512-9JGAacbElUPy9Chghd+sllIiM3jAcraZdD65bWYWUVKkghOsf1L/+jFLz1rcAuvrA9o2s7Y+T75BNcXuLwRcvw==
 
 "@sanity/insert-menu@^1.1.9":
   version "1.1.11"
@@ -2420,7 +2420,14 @@
   dependencies:
     "@sanity/client" "^7.0.0"
 
-"@sanity/ui@^2.0.1", "@sanity/ui@^2.15.14":
+"@sanity/types@^3.89.0":
+  version "3.89.0"
+  resolved "https://registry.yarnpkg.com/@sanity/types/-/types-3.89.0.tgz#b9b477b2b2bc32bf39c2813cb32eee8034cb13d9"
+  integrity sha512-wdcdPAQ/I692ccmxg3aN+Ur54Bgb9uj9iLe7lshj/02q4fWhunzw7YPdloFb5cJEtASyNt+0W6VcOZQElfV/EA==
+  dependencies:
+    "@sanity/client" "^7.2.2"
+
+"@sanity/ui@^2.15.14":
   version "2.15.14"
   resolved "https://registry.yarnpkg.com/@sanity/ui/-/ui-2.15.14.tgz#fa05407cc7a84b0beafc88aeda634b1ac0cf9800"
   integrity sha512-n1Hn97A1W/ku6+hDhojlA601w03XjBBbeEH+e5n6nXBnLj81GjE5DsoJcZ+ZDQI47iGmGsvG1M8eAb6E2VPuuQ==
@@ -4912,6 +4919,18 @@ get-it@^8.4.21, get-it@^8.6.2, get-it@^8.6.7:
     progress-stream "^2.0.0"
     tunnel-agent "^0.6.0"
 
+get-it@^8.6.9:
+  version "8.6.9"
+  resolved "https://registry.yarnpkg.com/get-it/-/get-it-8.6.9.tgz#89b939130ff387aebe84c8785626ef3acd96e779"
+  integrity sha512-CSUbVbfTZZbRrPqiMPaV3mWw+3MDgRPANtqBxLSp94cUUUZVAZfjGDwArvu5z2bx5ABW2MNB5kdT3PTOxe3cTw==
+  dependencies:
+    "@types/follow-redirects" "^1.14.4"
+    decompress-response "^7.0.0"
+    follow-redirects "^1.15.9"
+    is-retry-allowed "^2.2.0"
+    through2 "^4.0.2"
+    tunnel-agent "^0.6.0"
+
 get-package-type@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/get-package-type/-/get-package-type-0.1.0.tgz#8de2d803cff44df3bc6c456e6668b36c3926e11a"
@@ -6270,7 +6289,7 @@ nano-pubsub@^3.0.0:
   resolved "https://registry.yarnpkg.com/nano-pubsub/-/nano-pubsub-3.0.0.tgz#86f525bc91ad1445a02049e40a3038b96a01dfaf"
   integrity sha512-zoTNyBafxG0+F5PP3T3j1PKMr7gedriSdYRhLFLRFCz0OnQfQ6BkVk9peXVF30hz633Bw0Zh5McleOrXPjWYCQ==
 
-nanoid@^3.1.12, nanoid@^3.1.30, nanoid@^3.3.7, nanoid@^3.3.8:
+nanoid@^3.1.12, nanoid@^3.1.30, nanoid@^3.3.11, nanoid@^3.3.7, nanoid@^3.3.8:
   version "3.3.11"
   resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-3.3.11.tgz#4f4f112cefbe303202f2199838128936266d185b"
   integrity sha512-N8SpfPUnUp1bK+PMYW8qSWdl9U+wwNWI4QKxOYDy9JAro3WMX7p2OeVRF9v+347pnakNevPmiHhNmZ2HbFA76w==
@@ -7068,7 +7087,7 @@ readable-stream@2, readable-stream@^2.0.0, readable-stream@^2.0.5, readable-stre
     string_decoder "~1.1.1"
     util-deprecate "~1.0.1"
 
-"readable-stream@2 || 3", readable-stream@^3.0.2, readable-stream@^3.1.1, readable-stream@^3.4.0:
+"readable-stream@2 || 3", readable-stream@3, readable-stream@^3.0.2, readable-stream@^3.1.1, readable-stream@^3.4.0:
   version "3.6.2"
   resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-3.6.2.tgz#56a9b36ea965c00c5a93ef31eb111a0f11056967"
   integrity sha512-9u/sniCrY3D5WdsERHzHE4G2YCXqoG5FTHUiCC4SIbr6XcLZBY05ya9EKjYek9O5xOAwjGq+1JdGBAS7Q9ScoA==
@@ -7383,15 +7402,6 @@ safe-regex-test@^1.0.3, safe-regex-test@^1.1.0:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/safer-buffer/-/safer-buffer-2.1.2.tgz#44fa161b0187b9549dd84bb91802f9bd8385cd6a"
   integrity sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==
-
-sanity-plugin-vimeo-field@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/sanity-plugin-vimeo-field/-/sanity-plugin-vimeo-field-1.0.1.tgz#b46ffc3d17c060143824b0e5cae7999c037f80ac"
-  integrity sha512-h9ABYEtVCQgbBz9MAbshN7MbsctvnUJ9CKZoSJS9F1Jw3iG0DSDBiMP2rSCNakBYLwJ9gwgKDBYfWjJ2+Lx2PQ==
-  dependencies:
-    "@sanity/icons" "^2.10.0"
-    "@sanity/incompatible-plugin" "^1.0.4"
-    "@sanity/ui" "^2.0.1"
 
 sanity@^3.87.1:
   version "3.87.1"
@@ -8153,6 +8163,13 @@ through2@^3.0.1:
   dependencies:
     inherits "^2.0.4"
     readable-stream "2 || 3"
+
+through2@^4.0.2:
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/through2/-/through2-4.0.2.tgz#a7ce3ac2a7a8b0b966c80e7c49f0484c3b239764"
+  integrity sha512-iOqSav00cVxEEICeD7TjLB1sueEL+81Wpzp2bY17uZjZN0pWZPuo4suZ/61VujxmqSGFfgOcNuTZ85QJwNZQpw==
+  dependencies:
+    readable-stream "3"
 
 through@^2.3.8:
   version "2.3.8"

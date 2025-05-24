@@ -26,11 +26,12 @@ export const categoryPageType = defineType({
       type: 'array',
       of: [{type: 'image'}],
     }),
-    defineField({
-      name: 'stillsContent',
+    {
+      name: 'content',
+      title: 'Content',
       type: 'array',
-      of: [{type: 'doubleImage'}, {type: 'fullWidthImage'}],
-    }),
+      of: [{type: 'block'}, {type: 'flexibleImageContainer'}],
+    },
     defineField({
       name: 'videosTitleImage',
       type: 'image',
@@ -38,8 +39,9 @@ export const categoryPageType = defineType({
     }),
     defineField({
       name: 'videoGallery',
+      title: 'Video Gallery',
       type: 'array',
-      of: [{type: 'video'}],
+      of: [{type: 'vimeoEmbed'}],
     }),
   ],
 })
