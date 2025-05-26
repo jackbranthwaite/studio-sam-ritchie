@@ -16,20 +16,11 @@ export const pageType = defineType({
       options: {source: 'title'},
       validation: (rule) => rule.required(),
     }),
-    defineField({
-      name: 'publishedAt',
-      type: 'datetime',
-      initialValue: () => new Date().toISOString(),
-      validation: (rule) => rule.required(),
-    }),
-    defineField({
-      name: 'image',
-      type: 'image',
-    }),
-    defineField({
-      name: 'body',
+    {
+      name: 'content',
+      title: 'Content',
       type: 'array',
-      of: [{type: 'block'}],
-    }),
+      of: [{type: 'block'}, {type: 'flexibleImageContainer'}],
+    },
   ],
 })
