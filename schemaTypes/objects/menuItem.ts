@@ -14,8 +14,8 @@ export default {
       name: 'reference',
       title: 'Page Reference',
       type: 'reference',
-      to: [{type: 'page'}, {type: 'categoryPage'}],
-      description: 'Select a page or category page to link to',
+      to: [{type: 'page'}, {type: 'workPage'}],
+      description: 'Select a page or work page to link to',
       validation: (Rule: any) => Rule.required(),
     },
     {

@@ -2,6 +2,7 @@ import {defineConfig} from 'sanity'
 import {structureTool} from 'sanity/structure'
 import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemaTypes'
+import {tags} from 'sanity-plugin-tags'
 
 // Define the actions that should be available for singleton documents
 const singletonActions = new Set(['publish', 'discardChanges', 'restore'])
@@ -17,6 +18,7 @@ export default defineConfig({
   dataset: 'production',
 
   plugins: [
+    tags({}),
     visionTool(),
     structureTool({
       structure: (S) =>
@@ -33,7 +35,7 @@ export default defineConfig({
               .id('menu')
               .child(S.document().schemaType('menu').documentId('menu')),
             // Regular document types
-            S.documentTypeListItem('categoryPage').title('Category Page'),
+            S.documentTypeListItem('workPage').title('Work Page'),
             S.documentTypeListItem('page').title('Page'),
           ]),
     }),

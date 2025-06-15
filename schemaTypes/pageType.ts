@@ -20,7 +20,7 @@ export const pageType = defineType({
       name: 'content',
       title: 'Content',
       type: 'array',
-      of: [{type: 'block'}, {type: 'flexibleImageContainer'}],
+      of: [{type: 'block'}, {type: 'FlexibleContentContainer'}],
     },
   ],
 })
