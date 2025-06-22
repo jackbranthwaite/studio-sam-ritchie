@@ -68,6 +68,32 @@ export type Geopoint = {
   alt?: number
 }
 
+export type ImageGalleryBlock = {
+  _type: 'imageGalleryBlock'
+  imageGallery?: Array<
+    {
+      _key: string
+    } & SimpleImageBlock
+  >
+}
+
+export type SimpleImageBlock = {
+  _type: 'simpleImageBlock'
+  image?: {
+    asset?: {
+      _ref: string
+      _type: 'reference'
+      _weak?: boolean
+      [internalGroqTypeReferenceTo]?: 'sanity.imageAsset'
+    }
+    media?: unknown
+    hotspot?: SanityImageHotspot
+    crop?: SanityImageCrop
+    _type: 'image'
+  }
+  caption?: string
+}
+
 export type MenuItem = {
   _id: string
   _type: 'menuItem'
@@ -86,7 +112,7 @@ export type MenuItem = {
         _ref: string
         _type: 'reference'
         _weak?: boolean
-        [internalGroqTypeReferenceTo]?: 'categoryPage'
+        [internalGroqTypeReferenceTo]?: 'workPage'
       }
   order?: number
   isVisible?: boolean
@@ -112,7 +138,7 @@ export type Menu = {
           _ref: string
           _type: 'reference'
           _weak?: boolean
-          [internalGroqTypeReferenceTo]?: 'categoryPage'
+          [internalGroqTypeReferenceTo]?: 'workPage'
         }
     order?: number
     isVisible?: boolean
@@ -150,7 +176,7 @@ export type Page = {
       }
     | ({
         _key: string
-      } & FlexibleImageContainer)
+      } & FlexibleContentContainer)
   >
 }
 
@@ -161,15 +187,21 @@ export type VimeoEmbed = {
   description?: string
 }
 
-export type FlexibleImageContainer = {
-  _type: 'flexibleImageContainer'
-  imageBlocks?: Array<
+export type FlexibleContentContainer = {
+  _type: 'FlexibleContentContainer'
+  contentBlocks?: Array<
     | ({
         _key: string
       } & DualImageBlock)
     | ({
         _key: string
       } & SingleImageBlock)
+    | ({
+        _key: string
+      } & VimeoEmbed)
+    | ({
+        _key: string
+      } & ImageGalleryBlock)
   >
 }
 
@@ -220,15 +252,20 @@ export type DualImageBlock = {
   caption?: string
 }
 
-export type CategoryPage = {
+export type WorkPage = {
   _id: string
-  _type: 'categoryPage'
+  _type: 'workPage'
   _createdAt: string
   _updatedAt: string
   _rev: string
   title?: string
   slug?: Slug
-  stillsTitleImage?: {
+  workTags?: Array<
+    {
+      _key: string
+    } & Tag
+  >
+  titleImage?: {
     asset?: {
       _ref: string
       _type: 'reference'
@@ -240,19 +277,6 @@ export type CategoryPage = {
     crop?: SanityImageCrop
     _type: 'image'
   }
-  stillsGallery?: Array<{
-    asset?: {
-      _ref: string
-      _type: 'reference'
-      _weak?: boolean
-      [internalGroqTypeReferenceTo]?: 'sanity.imageAsset'
-    }
-    media?: unknown
-    hotspot?: SanityImageHotspot
-    crop?: SanityImageCrop
-    _type: 'image'
-    _key: string
-  }>
   content?: Array<
     | {
         children?: Array<{
@@ -274,24 +298,7 @@ export type CategoryPage = {
       }
     | ({
         _key: string
-      } & FlexibleImageContainer)
-  >
-  videosTitleImage?: {
-    asset?: {
-      _ref: string
-      _type: 'reference'
-      _weak?: boolean
-      [internalGroqTypeReferenceTo]?: 'sanity.imageAsset'
-    }
-    media?: unknown
-    hotspot?: SanityImageHotspot
-    crop?: SanityImageCrop
-    _type: 'image'
-  }
-  videoGallery?: Array<
-    {
-      _key: string
-    } & VimeoEmbed
+      } & FlexibleContentContainer)
   >
 }
 
@@ -380,20 +387,34 @@ export type SanityImageMetadata = {
   isOpaque?: boolean
 }
 
+export type Tags = Array<
+  {
+    _key: string
+  } & Tag
+>
+
+export type Tag = {
+  _type: 'tag'
+  value?: string
+  label?: string
+}
+
 export type AllSanitySchemaTypes =
   | SanityImagePaletteSwatch
   | SanityImagePalette
   | SanityImageDimensions
   | SanityFileAsset
   | Geopoint
+  | ImageGalleryBlock
+  | SimpleImageBlock
   | MenuItem
   | Menu
   | Page
   | VimeoEmbed
-  | FlexibleImageContainer
+  | FlexibleContentContainer
   | SingleImageBlock
   | DualImageBlock
-  | CategoryPage
+  | WorkPage
   | Slug
   | Homepage
   | SanityImageCrop
@@ -401,4 +422,6 @@ export type AllSanitySchemaTypes =
   | SanityImageAsset
   | SanityAssetSourceData
   | SanityImageMetadata
+  | Tags
+  | Tag
 export declare const internalGroqTypeReferenceTo: unique symbol
