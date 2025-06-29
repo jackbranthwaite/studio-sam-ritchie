@@ -9,6 +9,7 @@ import {menuType} from './menuType'
 import menuItem from './objects/menuItem'
 import simpleImage from './objects/simpleImage'
 import imageGallery from './objects/imageGallery'
+import contributor from './objects/contributor'
 
 export const schemaTypes = [
   homepage,
@@ -22,4 +23,5 @@ export const schemaTypes = [
   menuItem,
   simpleImage,
   imageGallery,
+  contributor,
 ]

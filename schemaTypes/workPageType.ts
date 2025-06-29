@@ -36,6 +36,18 @@ export const workPageType = defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
+      name: 'description',
+      title: 'Description',
+      type: 'array',
+      of: [{type: 'block'}],
+    }),
+    defineField({
+      name: 'contributors',
+      title: 'Contributors',
+      type: 'array',
+      of: [{type: 'contributor'}],
+    }),
+    defineField({
       name: 'content',
       title: 'Content',
       type: 'array',
